@@ -13,6 +13,7 @@ export const GlobalContext = createContext(initailState);
 export const GlobalProvider = (props) => {
   const [state, dispatch] = useReducer(AppReducer, initailState);
 
+  // delete transaction fn
   function deleteTransaction(id) {
     dispatch({
       type: "Delete_Transaction",
@@ -20,6 +21,7 @@ export const GlobalProvider = (props) => {
     });
   }
 
+  // add transaction fn
   function addTransaction(transaction) {
     dispatch({
       type: "Add_Transaction",
